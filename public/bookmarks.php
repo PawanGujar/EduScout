@@ -1,7 +1,7 @@
 <?php
 // bookmarks.php
 session_start();
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php';
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'learner') {
     header('Location: login.php');
     exit;
@@ -26,10 +26,10 @@ $stmt->close();
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Bookmarks</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <?php include 'header.php'; /* you can extract the header nav into a separate file */ ?>
+  <?php include __DIR__ . '/../includes/header.php'; /* you can extract the header nav into a separate file */ ?>
   <div class="container">
     <main class="main-content">
       <h2>My Bookmarked Courses</h2>
@@ -53,6 +53,6 @@ $stmt->close();
       </section>
     </main>
   </div>
-  <script src="scripts.js"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>

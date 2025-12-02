@@ -1,7 +1,7 @@
 <?php
 // review_courses.php
 session_start();
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php';
 
 // Only allow admin
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
@@ -36,10 +36,10 @@ $result = $mysqli->query("SELECT c.id, c.title, c.url, c.category, u.username
 <html>
 <head>
   <title>Review Courses - EduScout</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include __DIR__ . '/../includes/header.php'; ?>
   <div class="container">
     <h2>Review Submitted Courses</h2>
     <?php if ($message): ?>

@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require __DIR__ . '/../config/config.php';
 
 $email = 'admin@example.com';
 $username = 'adminuser';

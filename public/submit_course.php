@@ -1,7 +1,7 @@
 <?php
 // submit_course.php
 session_start();
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php';
 
 // Only allow editors or admins
 if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], ['editor','admin'])) {
@@ -35,10 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
   <title>Submit Course - EduScout</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include __DIR__ . '/../includes/header.php'; ?>
   <div class="container">
     <h2>Submit a Course</h2>
     <?php if ($message): ?>

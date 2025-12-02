@@ -1,7 +1,7 @@
 <?php
 // my_submissions.php
 session_start();
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php';
 
 // Only editors/admins
 if (!isset($_SESSION['role']) || !in_array($_SESSION['role'], ['editor','admin'])) {
@@ -20,10 +20,10 @@ $result = $stmt->get_result();
 <html>
 <head>
   <title>My Submissions - EduScout</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <?php include 'header.php'; ?>
+  <?php include __DIR__ . '/../includes/header.php'; ?>
   <div class="container">
     <h2>My Submitted Courses</h2>
     <?php if ($result->num_rows > 0): ?>
