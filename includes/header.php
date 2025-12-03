@@ -11,6 +11,11 @@ $role       = $isLoggedIn ? $_SESSION['role'] : null;
 ?>
 <header class="site-header">
   <h1>EduScout</h1>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <nav>
     <ul>
       <?php if ($isLoggedIn): ?>
@@ -30,6 +35,7 @@ $role       = $isLoggedIn ? $_SESSION['role'] : null;
 
         <?php if ($role === 'admin'): ?>
           <li><a href="review_courses.php" <?= basename($_SERVER['PHP_SELF']) === 'review_courses.php' ? 'class="active"' : '' ?>>Review Courses</a></li>
+          <li><a href="manage_categories.php" <?= basename($_SERVER['PHP_SELF']) === 'manage_categories.php' ? 'class="active"' : '' ?>>Manage Categories</a></li>
         <?php endif; ?>
 
         <li><a href="logout.php">Logout</a></li>
@@ -40,3 +46,4 @@ $role       = $isLoggedIn ? $_SESSION['role'] : null;
     </ul>
   </nav>
 </header>
+<script src="assets/js/scripts.js"></script>
